@@ -19,6 +19,7 @@ import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { StockageAccessoireComponent } from './stockage-accessoire/stockage-accessoire.component';
 import { TestComponentComponent } from './test-component/test-component.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     PhonesModule,
     StockageModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
