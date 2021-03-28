@@ -19,7 +19,10 @@ import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { StockageAccessoireComponent } from './stockage-accessoire/stockage-accessoire.component';
 import { TestComponentComponent } from './test-component/test-component.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {NoAuthentificationGuard} from './guards/no-authentification.guard';
+import {AuthentificationService} from './authentification.service';
+import {AuthentificationGuard} from './guards/authentification.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     PhonesModule,
     StockageModule,
@@ -47,7 +51,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthentificationService, AuthentificationGuard, NoAuthentificationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

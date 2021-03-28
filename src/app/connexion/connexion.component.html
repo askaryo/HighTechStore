@@ -1,1 +1,17 @@
-<p>connexion works!</p>
+<form #connexionForm="ngForm" (ngSubmit)="connexion(connexionForm)">
+  <div class="row mb-3" style="width: 500px">
+    <label for="InputEmail1">Email address</label>
+    <input type="email"  class="form-control" id="InputEmail1" name="email" #email="ngModel"
+           ngModel email required>
+    <div class ="alert alert-danger" *ngIf="email.errors &&(email.touched || email.dirty)"  role="alert">
+      Invalid pattern
+    </div>
+  </div>
+  <div class="row mb-3" style="width: 500px">
+    <label for="InputPassword1">Password</label>
+    <input type="password" class="form-control" id="InputPassword1" name="password"
+           #password="ngModel" ngModel required minlength="8">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="connexionForm.invalid">Log in</button>
+</form>
