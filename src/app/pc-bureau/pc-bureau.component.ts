@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ArticleService} from '../article.service';
 
 @Component({
   selector: 'app-pc-bureau',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pc-bureau.component.css']
 })
 export class PcBureauComponent implements OnInit {
+  public dataArray: Array<string> | any;
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
+    this.articleService.getAll().subscribe(res => {
+      this.dataArray = res;
+    });
   }
 
 }

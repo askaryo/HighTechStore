@@ -48,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     PhonesModule,
     StockageModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AuthentificationService, AuthentificationGuard, NoAuthentificationGuard],
   bootstrap: [AppComponent]
