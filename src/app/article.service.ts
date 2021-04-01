@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 export class ArticleService {
 
  // articles: Array<string> = new Array<string>();
-  url = 'https://jsonplaceholder.typicode.com/posts';
+  url = 'http://1ef9ad55ea28.ngrok.io/rest_project_template/rest/categories/';
 
   constructor(private http: HttpClient) { }
 
