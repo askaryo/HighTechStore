@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "HighTechStore"
+  "defaultProject": "HighTechStore",
+  "cli": {
+    "analytics": false
+  }
 }

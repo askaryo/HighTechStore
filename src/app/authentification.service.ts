@@ -1,4 +1,4 @@
-import {Injectable, NgZone} from '@angular/core';
+import {EventEmitter, Injectable, NgZone, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
@@ -7,7 +7,10 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthentificationService {
+
+  @Output() fireIsLoggedIn: EventEmitter<any> = new EventEmitter<any>();
 
   userData: any;
 
@@ -36,6 +39,8 @@ export class AuthentificationService {
       if (data.id) {
         console.log('Connexion réussie...');
         localStorage.setItem('user', JSON.stringify(data));
+        this.fireIsLoggedIn.emit(true); // you can pass here whatever you want
+
         this.success();
       } else {
         console.log('La connexion a échouée...');
@@ -88,6 +93,14 @@ export class AuthentificationService {
     }
     return false;
   }
+
+  isConnected() {
+    return this.fireIsLoggedIn;
+
+  }
+
+
+
 
   // Sign out
   SignOut(): void

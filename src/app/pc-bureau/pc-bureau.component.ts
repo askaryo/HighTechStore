@@ -12,7 +12,7 @@ export class PcBureauComponent implements OnInit {
   constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
-    this.articleService.getAll().subscribe(res => {
+    this.articleService.getAll("2").subscribe(res => {
       this.dataArray = res;
     });
   }

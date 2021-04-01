@@ -12,8 +12,13 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.url);
+  getAll(id: string): Observable<Array<string>> {
+    return this.http.get<Array<string>>(this.url+id+"/articles");
   }
+
+
+
+
+
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-cle-usb',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CleUsbComponent implements OnInit {
 
-  constructor() { }
+  public dataArray: Array<string> | any;
+
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
+    this.articleService.getAll("8").subscribe(res => {
+      this.dataArray = res;
+    });
   }
-
 }
