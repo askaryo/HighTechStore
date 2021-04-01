@@ -8,13 +8,20 @@ import {ConnexionComponent} from './connexion/connexion.component';
 import {NoAuthentificationGuard} from './guards/no-authentification.guard';
 import {AuthentificationGuard} from './guards/authentification.guard';
 import { AuthentificationService } from './authentification.service';
+import { CleUsbComponent } from './cle-usb/cle-usb.component';
+import { DisqueDurComponent } from './disque-dur/disque-dur.component';
+import { StockageAccessoireComponent } from './stockage-accessoire/stockage-accessoire.component';
 
 const routes: Routes = [
-  { path: 'Home', component: HomeComponent, canActivate: [AuthentificationGuard] },
-  { path: 'PcPortable', component: PcPortableComponent, canActivate: [AuthentificationGuard] },
-  { path: 'PcBureau', component: PcBureauComponent, canActivate: [AuthentificationGuard] },
-  { path: 'PcAccessoires', component: PcAccessoireComponent, canActivate: [AuthentificationGuard] },
-  { path: 'Connexion', component: ConnexionComponent, canActivate: [NoAuthentificationGuard] }
+  { path: 'Home', component: HomeComponent },
+  { path: 'PcPortable', component: PcPortableComponent },
+  { path: 'PcBureau', component: PcBureauComponent},
+  { path: 'PcAccessoires', component: PcAccessoireComponent },
+  { path: 'Connexion', component: ConnexionComponent, canActivate: [NoAuthentificationGuard] },
+  { path: 'CleUsb', component: CleUsbComponent},
+  { path: 'DisqueDur', component: DisqueDurComponent },
+  { path: 'StockageAccessoire', component: StockageAccessoireComponent  }
+
 ];
 
 @NgModule({

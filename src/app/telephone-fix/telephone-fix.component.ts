@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-telephone-fix',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelephoneFixComponent implements OnInit {
 
-  constructor() { }
+  public dataArray: Array<string> | any;
+
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
+    this.articleService.getAll("5").subscribe(res => {
+      this.dataArray = res;
+    });
   }
+
+
 
 }

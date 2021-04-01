@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-pc-accessoire',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PcAccessoireComponent implements OnInit {
 
-  constructor() { }
+  public dataArray: Array<string> | any;
+
+  constructor(private articleService: ArticleService) { }
+
+
+
 
   ngOnInit(): void {
+    this.articleService.getAll("3").subscribe(res => {
+      for ( var rest in res) {
+
+      }
+      this.dataArray = res;
+    });
   }
 
 }
