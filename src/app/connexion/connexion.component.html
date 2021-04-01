@@ -1,4 +1,5 @@
-<form #connexionForm="ngForm" (ngSubmit)="connexion(connexionForm)">
+<div class ="container">
+  <form #connexionForm="ngForm" (ngSubmit)="connexion(connexionForm)">
   <div class="row mb-3" style="width: 500px">
     <label for="InputEmail1">Email address</label>
     <input type="email"  class="form-control" id="InputEmail1" name="email" #email="ngModel"
@@ -12,6 +13,35 @@
     <input type="password" class="form-control" id="InputPassword1" name="password"
            #password="ngModel" ngModel required minlength="8">
   </div>
-
-  <button type="submit" class="btn btn-primary" [disabled]="connexionForm.invalid">Log in</button>
 </form>
+  <button type="submit" class="btn btn-primary" [disabled]="connexionForm.invalid">Log in</button>
+
+  <!--   <form #connexionForm="ngForm" (ngSubmit)="connexion(connexionForm)">  
+    <div class="row">
+      <div class="col-md-6">
+        
+          <input type="email" class="form-control" id="InputEmail1" name="email" #email="ngModel"
+          ngModel email required placeholder="Please enter your e-mail adress !" class="form-control">
+        
+        <div class ="alert alert-danger" *ngIf="email.errors &&(email.touched || email.dirty)"  role="alert">
+          Invalid pattern
+        </div>					
+      </div>			
+        			
+    </div> <br>
+    <div class="row">
+      <div class="col-md-6">
+        
+          <input type="password" class="form-control" id="InputPassword1" name="password"
+          #password="ngModel" ngModel required minlength="8" placeholder="Please enter your password !" class="form-control">
+        
+      </div>
+    </div>
+      </form>
+      <br>
+        <button type="submit" class="btn btn-primary" [disabled]="connexionForm.invalid">Log in</button>
+      -->
+</div>
+
+
+

@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+.home{
+	height: 1000px;
+	background-image: url('assets/images/hightech0.jpeg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.home .home-content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); 
+       
+}
+
+.home .home-title{
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 25px;
+}
+
+.home .home-desc{
+	color: #fff;
+	font-size: 19 px;
+}
+
+.home .button{
+	background: #8c8c8c;
+	color: #fff;
+	width: 150px;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.overlay{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+}
