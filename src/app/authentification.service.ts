@@ -88,7 +88,7 @@ export class AuthentificationService {
   // Returns true when user is Admin
   get isAdmin(): boolean
   {
-    if (this.userData.type === 'admin') {
+    if (this.userData.role === 'admin') {
       return true;
     }
     return false;

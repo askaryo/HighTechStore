@@ -1,12 +1,7 @@
-
-<div class="card" style="width: 18rem;">
-
-
-  <h5 class="card-title">
+<h5 class="card-title">
     Ajouter un article
-  </h5>
+</h5>
 
-  <div class="card-body">
 
   <form #addForm="ngForm" (ngSubmit)="addArticle(addForm)">
     <div class="row mb-3" style="width: 500px">
@@ -98,6 +93,5 @@
 
     <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Log in</button>
     </form>
-  </div>
 
-</div>
+

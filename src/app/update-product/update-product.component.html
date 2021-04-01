@@ -1,0 +1,97 @@
+<h5 class="card-title">
+  Ajouter un article
+</h5>
+
+
+<form #updateForm="ngForm" (ngSubmit)="update(updateForm)">
+  <div class="row mb-3" style="width: 500px">
+    <label for="libelle">libelle</label>
+    <input  class="form-control" id="libelle" name="libelle" #libelle="ngModel"
+            ngModel  required>
+    <div class ="alert alert-danger" *ngIf="libelle.errors &&(libelle.touched || libelle.dirty)"  role="alert">
+      Invalid pattern
+    </div>
+  </div>
+
+  <div class="row mb-3" style="width: 500px">
+    <label for="marque"> Marque </label>
+    <input  class="form-control" id="marque" name="marque" #marque="ngModel"
+            ngModel  required>
+    <div class ="alert alert-danger" *ngIf="marque.errors &&(marque.touched || marque.dirty)"  role="alert">
+      Invalid pattern
+    </div>
+  </div>
+
+  <div class="row mb-3" style="width: 500px">
+    <label for="prix">Prix </label>
+    <input  class="form-control" id="prix" name="prix" #prix="ngModel"
+            ngModel  required>
+    <div class ="alert alert-danger" *ngIf="prix.errors &&(prix.touched || prix.dirty)"  role="alert">
+      Invalid pattern
+    </div>
+  </div>
+
+  <div class="row mb-3" style="width: 500px">
+    <label for="photo"> Photo </label>
+    <input  class="form-control" id="photo" name="photo" #photo="ngModel"
+            ngModel  required>
+    <div class ="alert alert-danger" *ngIf="photo.errors &&(photo.touched || photo.dirty)"  role="alert">
+      Invalid pattern
+    </div>
+  </div>
+
+
+
+  <div class="row mb-3" style="width: 500px">
+    <label for="photo"> Catégorie </label>
+    <select name = "idCategorie" #idCategorie="ngModel"
+            ngModel >
+      <option value="1">
+        Pc portable
+      </option>
+
+      <option value="2">
+        Pc de bureau
+      </option>
+
+      <option value="3">
+        Accessoires pc
+      </option>
+
+      <option value="4">
+        Pc portable
+      </option>
+
+      <option value="5">
+        Pc portable
+      </option>
+
+      <option value="6">
+        Pc portable
+      </option>
+
+      <option value="7">
+        Pc portable
+      </option>
+
+
+      <option value="8">
+        Pc portable
+      </option>
+
+
+      <option value="9">
+        Pc portable
+      </option>
+
+    </select>
+    <div class ="alert alert-danger" *ngIf="photo.errors &&(photo.touched || photo.dirty)"  role="alert">
+      Invalid pattern
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid">Update</button>
+</form>
+
+

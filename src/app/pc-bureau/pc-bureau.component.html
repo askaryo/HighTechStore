@@ -1,5 +1,3 @@
-<p>pc-bureau works!</p>
-
 <H1>Pc de Bureau</H1>
 <ul *ngFor="let item of dataArray">
 
@@ -8,16 +6,15 @@
     <div class="card-body">
       <h5 class="card-title">    {{item.libelle}}      </h5>
       <h6>
-         Marque : {{item.marque}}
+        Marque : {{item.marque}}
       </h6>
       <h6>
-        Prix : {{item.prix}}
-     </h6>
+        Prix : {{item.prix}} $
+      </h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="Article/{{item.id}}" class="btn btn-primary">Afficher le produit</a>
     </div>
   </div>
 
 
 </ul>
-

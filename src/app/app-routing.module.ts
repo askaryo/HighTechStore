@@ -11,7 +11,9 @@ import { AuthentificationService } from './authentification.service';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { DisqueDurComponent } from './disque-dur/disque-dur.component';
 import { StockageAccessoireComponent } from './stockage-accessoire/stockage-accessoire.component';
+import {ArticleComponent} from './article/article.component';
 import { GestionComponent } from './gestion/gestion.component';
+import {UpdateProductComponent} from './update-product/update-product.component';
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
@@ -22,8 +24,10 @@ const routes: Routes = [
   { path: 'CleUsb', component: CleUsbComponent},
   { path: 'DisqueDur', component: DisqueDurComponent },
   { path: 'StockageAccessoire', component: StockageAccessoireComponent },
-  { path: 'Gestion', component: GestionComponent  }
-
+  { path: 'Gestion', component: GestionComponent  },
+  { path: 'StockageAccessoire', component: StockageAccessoireComponent  },
+  { path: 'Article/:id', component: ArticleComponent  },
+  { path: 'UpdateProduct/:id', component: UpdateProductComponent  },
 
 ];
 

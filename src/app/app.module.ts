@@ -17,13 +17,15 @@ import { TelephoneAccessoireComponent } from './telephone-accessoire/telephone-a
 import { DisqueDurComponent } from './disque-dur/disque-dur.component';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { StockageAccessoireComponent } from './stockage-accessoire/stockage-accessoire.component';
-import { TestComponentComponent } from './test-component/test-component.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NoAuthentificationGuard} from './guards/no-authentification.guard';
 import {AuthentificationService} from './authentification.service';
 import {AuthentificationGuard} from './guards/authentification.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleComponent } from './article/article.component';
+import { FooterComponent } from './footer/footer.component';
 import { GestionComponent } from './gestion/gestion.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,10 @@ import { GestionComponent } from './gestion/gestion.component';
     DisqueDurComponent,
     CleUsbComponent,
     StockageAccessoireComponent,
-    TestComponentComponent,
-    GestionComponent
+    ArticleComponent,
+    FooterComponent,
+    GestionComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
