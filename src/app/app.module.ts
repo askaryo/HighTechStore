@@ -23,6 +23,7 @@ import {NoAuthentificationGuard} from './guards/no-authentification.guard';
 import {AuthentificationService} from './authentification.service';
 import {AuthentificationGuard} from './guards/authentification.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { GestionComponent } from './gestion/gestion.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     DisqueDurComponent,
     CleUsbComponent,
     StockageAccessoireComponent,
-    TestComponentComponent
+    TestComponentComponent,
+    GestionComponent
   ],
   imports: [
     BrowserModule,
