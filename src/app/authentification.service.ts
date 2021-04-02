@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable, NgZone, Output} from '@angular/core';
 import {Router} from '@angular/router';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
