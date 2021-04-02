@@ -9,17 +9,17 @@ import {AuthentificationService} from '../authentification.service';
 export class NavbarComponent implements OnInit, OnChanges {
 
   isLoggedIn: boolean;
+
   private authentificationService: AuthentificationService;
   constructor(private aService: AuthentificationService) {
     this.authentificationService = aService;
     this.isLoggedIn = this.authentificationService.isLoggedIn;
-    console.log(this.isLoggedIn);
   }
 
   ngOnInit(): void {
     this.isLoggedIn = this.authentificationService.isLoggedIn;
     this.authentificationService.isConnected().subscribe(connected => {
-      console.log("Component is notified of successfull login!");
+      console.log('Component is notified of successfull login!');
       this.isLoggedIn = connected;
 
     });
@@ -29,11 +29,8 @@ export class NavbarComponent implements OnInit, OnChanges {
     this.isLoggedIn = this.authentificationService.isLoggedIn;
   }
 
-
-
   SignOut(): void{
     this.authentificationService.SignOut();
     this.ngOnInit();
   }
-
 }
