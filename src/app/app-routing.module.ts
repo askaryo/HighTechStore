@@ -24,10 +24,10 @@ const routes: Routes = [
   { path: 'CleUsb', component: CleUsbComponent},
   { path: 'DisqueDur', component: DisqueDurComponent },
   { path: 'StockageAccessoire', component: StockageAccessoireComponent },
-  { path: 'Gestion', component: GestionComponent  },
+  { path: 'Gestion', component: GestionComponent, canActivate: [AuthentificationGuard] },
   { path: 'StockageAccessoire', component: StockageAccessoireComponent  },
-  { path: 'Article/:id', component: ArticleComponent  },
-  { path: 'UpdateProduct/:id', component: UpdateProductComponent  },
+  { path: 'Article/:id', component: ArticleComponent },
+  { path: 'UpdateProduct/:id', component: UpdateProductComponent, canActivate: [AuthentificationGuard] },
 
 ];
 

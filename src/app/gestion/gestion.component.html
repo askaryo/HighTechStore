@@ -1,11 +1,11 @@
-<h5 class="card-title">
-    Ajouter un article
-</h5>
-
+<div style="width: fit-content;" class="m-auto">
+  <h5 class="card-title text-center">
+      Ajouter un article
+  </h5>
 
   <form #addForm="ngForm" (ngSubmit)="addArticle(addForm)">
     <div class="row mb-3" style="width: 500px">
-      <label for="libelle">libelle</label>
+      <label for="libelle">Libelle</label>
       <input  class="form-control" id="libelle" name="libelle" #libelle="ngModel"
              ngModel  required>
       <div class ="alert alert-danger" *ngIf="libelle.errors &&(libelle.touched || libelle.dirty)"  role="alert">
@@ -40,58 +40,46 @@
       </div>
     </div>
 
-
-
     <div class="row mb-3" style="width: 500px">
       <label for="photo"> Catégorie </label>
       <select name = "idCategorie" #idCategorie="ngModel"
-      ngModel >
+      ngModel>
+        <option value="" selected disabled>
+          Choisir...
+        </option>
         <option value="1">
           Pc portable
         </option>
-
         <option value="2">
           Pc de bureau
         </option>
-
         <option value="3">
           Accessoires pc
         </option>
-
         <option value="4">
           Pc portable
         </option>
-
         <option value="5">
           Pc portable
         </option>
-
         <option value="6">
           Pc portable
         </option>
-
         <option value="7">
           Pc portable
         </option>
-
-
         <option value="8">
           Pc portable
         </option>
-
-
         <option value="9">
           Pc portable
         </option>
-
       </select>
       <div class ="alert alert-danger" *ngIf="photo.errors &&(photo.touched || photo.dirty)"  role="alert">
         Invalid pattern
       </div>
     </div>
 
-
-    <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Log in</button>
+    <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Create</button>
     </form>
-
-
+</div>

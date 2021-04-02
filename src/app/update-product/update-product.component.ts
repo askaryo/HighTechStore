@@ -17,13 +17,14 @@ export class UpdateProductComponent implements OnInit {
 
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {
     this.idArticle = '';
+    this.dataArray = {};
     this.route.params.subscribe(params => this.idArticle = params.id);
-
   }
 
   ngOnInit(): void {
     this.articleService.getArticlesById(this.idArticle).subscribe(res => {
       this.dataArray = res;
+      console.log(this.dataArray);
     });
   }
 
@@ -33,7 +34,6 @@ export class UpdateProductComponent implements OnInit {
     const prix = updateForm.controls.prix.value;
     const photo = updateForm.controls.photo.value;
     const idCategorie = updateForm.controls.idCategorie.value;
-
 
     if (libelle && marque && prix && photo && idCategorie) {
       this.articleService.putRequest(this.idArticle, libelle, marque, prix, photo, idCategorie);

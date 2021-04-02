@@ -12,7 +12,7 @@ export class AuthentificationService {
 
   @Output() fireIsLoggedIn: EventEmitter<any> = new EventEmitter<any>();
 
-  userData: any;
+  private userData: any;
 
   constructor(private http: HttpClient, private route: Router) {
     let user;
@@ -40,7 +40,6 @@ export class AuthentificationService {
         console.log('Connexion réussie...');
         localStorage.setItem('user', JSON.stringify(data));
         this.fireIsLoggedIn.emit(true); // you can pass here whatever you want
-
         this.success();
       } else {
         console.log('La connexion a échouée...');
@@ -52,6 +51,7 @@ export class AuthentificationService {
   // When authentification didn't work
   echec(): void {
     // Rediriger un utilisateur
+    alert('L\'utilisateur est introuvable.');
     this.route.navigate(['Connexion']);
   }
 
