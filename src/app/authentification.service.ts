@@ -73,7 +73,7 @@ export class AuthentificationService {
   }
 
   requestLogin(email: string, password: string): Observable<any> {
-    return this.http.post<any>('http://1ef9ad55ea28.ngrok.io/rest_project_template/rest/utilisateurs/sign_in', {email, password});
+    return this.http.post<any>('https://3803c3d2b4b2.ngrok.io/rest_project_template/rest/utilisateurs/sign_in', {email, password});
   }
 
   // Returns true when user is logged in and email is verified
