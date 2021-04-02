@@ -10,10 +10,12 @@ export class SmartphoneComponent implements OnInit {
 
   public dataArray: Array<string> | any;
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService) {
+    this.dataArray = [];
+  }
 
   ngOnInit(): void {
-    this.articleService.getAll("4").subscribe(res => {
+    this.articleService.getAll('4').subscribe(res => {
       this.dataArray = res;
     });
   }

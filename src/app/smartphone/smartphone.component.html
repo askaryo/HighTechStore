@@ -1,20 +1,21 @@
 <H1>Smartphone</H1>
-<ul *ngFor="let item of dataArray">
-
-  <div class="card" style="width: 18rem;">
-    <img src={{item.photo}} class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">    {{item.libelle}}      </h5>
-      <h6>
-        Marque : {{item.marque}}
-      </h6>
-      <h6>
-        Prix : {{item.prix}} $
-      </h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="Article/{{item.id}}" class="btn btn-primary">Afficher le produit</a>
+<div class="container">
+   <div class="row">
+    <div style="margin: 5px;" *ngFor="let item of dataArray" class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img style="margin: auto;max-height: 150px;" src={{item.photo}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">    {{item.libelle}}      </h5>
+          <h6>
+            Marque : {{item.marque}}
+          </h6>
+          <h6>
+            Prix : {{item.prix}} $
+          </h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="Article/{{item.id}}" class="btn btn-primary">Afficher le produit</a>
+        </div>
+      </div>
     </div>
   </div>
-
-
-</ul>
+</div>
